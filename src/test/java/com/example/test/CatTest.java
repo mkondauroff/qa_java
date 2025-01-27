@@ -31,7 +31,6 @@ public class CatTest {
     @Test
     public void testCatGetFood() throws Exception {
         cat.getFood();
-        cat.getFood();
-        Mockito.verify(feline, Mockito.times(2)).eatMeat();
+        Mockito.verify(feline, Mockito.times(1)).eatMeat();
     }
 }

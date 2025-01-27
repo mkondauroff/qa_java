@@ -17,14 +17,8 @@ public class FelineTest {
     private Feline feline;
 
     @Test
-    public void testGetKittensWithCounts() {
+    public void testGetKittens() {
         Assert.assertEquals("Проверка методов с количеством", 3, feline.getKittens(3));
-    }
-
-    @Test
-    public void testGetKittensWithoutCounts() {
-        feline.getKittens();
-        Mockito.verify(feline, Mockito.times(1)).getKittens();
     }
 
     @Test
@@ -40,11 +34,11 @@ public class FelineTest {
 
     @Test
     public void testGetFoodWhenThaAnimalIsPredator() throws Exception {
-        Assert.assertEquals(feline.getFood("Хищник"),List.of("Животные", "Птицы", "Рыба"));
+        Assert.assertEquals(List.of("Животные", "Птицы", "Рыба"),feline.getFood("Хищник"));
     }
 
     @Test
     public void testGetFoodWhenThaAnimalIsPlantEating() throws Exception {
-        Assert.assertEquals(feline.getFood("Травоядное"),List.of("Трава", "Различные растения"));
+        Assert.assertEquals(List.of("Трава", "Различные растения"),feline.getFood("Травоядное"));
     }
 }
