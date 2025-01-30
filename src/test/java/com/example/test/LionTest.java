@@ -15,12 +15,12 @@ public class LionTest {
     @Test
 
     public void testLionGetKittens(){
-        Assert.assertEquals(lion.getKittens(),1);
+        Assert.assertEquals(1, lion.getKittens());
 
     }
     @Test
     public void testLionGetFood() throws Exception{
-        Assert.assertEquals(lion.getFood(), List.of("Животные", "Птицы", "Рыба"));
+        Assert.assertEquals(List.of("Животные", "Птицы", "Рыба"), lion.getFood());
 
     }
 
@@ -29,7 +29,7 @@ public class LionTest {
         String sex = "Оно";
         Exception thrown = assertThrows(
                 Exception.class,
-                () -> {Lion lion = new Lion(sex);
+                () -> {Lion lion = new Lion(feline, sex);
                     lion.doesHaveMane();
                 });
         Assert.assertEquals("Используйте допустимые значения пола животного - самей или самка", thrown.getMessage());

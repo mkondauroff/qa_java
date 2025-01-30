@@ -17,8 +17,14 @@ public class FelineTest {
     private Feline feline;
 
     @Test
-    public void testGetKittens() {
+    public void testGetKittensWithCounts() {
         Assert.assertEquals("Проверка методов с количеством", 3, feline.getKittens(3));
+    }
+
+    @Test
+    public void testGetKittensWithoutCounts() {
+        feline.getKittens();
+        Mockito.verify(feline, Mockito.times(1)).getKittens(1);
     }
 
     @Test

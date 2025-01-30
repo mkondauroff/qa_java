@@ -9,8 +9,8 @@ public class Lion {
         public Lion(Feline feline) {
             this.feline = feline;
         }
-    public Lion(String sex) throws Exception {
-            this.feline = new Feline();
+    public Lion(Feline feline, String sex) throws Exception {
+            this.feline = feline;
         if ("Самец".equals(sex)) {
             hasMane = true;
         } else if ("Самка".equals(sex)) {
